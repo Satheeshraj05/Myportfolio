@@ -70,4 +70,3 @@ git remote add upstream https://github.com/Satheeshraj05/Myportfolio.git
 ```bash
 git pull upstream master
 ```
-
