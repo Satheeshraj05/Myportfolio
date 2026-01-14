@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import Fade from 'react-reveal/Fade';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
 import { HiDocumentText } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
-import { FaUser, FaFolderOpen } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
@@ -15,17 +15,26 @@ import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
-    const { theme, setHandleDrawer } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {
+        console.log('Opening drawer');
         setOpen(true);
-        setHandleDrawer();
+        document.body.style.overflow = 'hidden';
     };
 
     const handleDrawerClose = () => {
+        console.log('Closing drawer');
         setOpen(false);
-        setHandleDrawer();
+        document.body.style.overflow = 'unset';
+    };
+    
+    // Close drawer when clicking outside
+    const handleBackdropClick = (event) => {
+        if (event.target.classList.contains('MuiDrawer-root')) {
+            handleDrawerClose();
+        }
     };
 
     const useStyles = makeStyles((t) => ({
@@ -35,6 +44,8 @@ function Navbar() {
             cursor: 'pointer',
             transform: 'translateY(-10px)',
             transition: 'color 0.3s',
+            position: 'relative',
+            zIndex: 1000, // Ensure it's above other elements
             '&:hover': {
                 color: theme.primary,
             },
@@ -131,29 +142,40 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <div className='navbar--container'>
+            <div className="navbar--container">
                 <h1 style={{ color: theme.secondary }}>
                     {shortname(headerData.name)}
                 </h1>
 
-                <IoMenuSharp
-                    className={classes.navMenu}
-                    onClick={handleDrawerOpen}
-                    aria-label='Menu'
-                />
+                <div style={{ 
+                    position: 'relative', 
+                    zIndex: 1000,
+                    cursor: 'pointer',
+                    padding: '10px',
+                    marginLeft: 'auto' // Push to the right
+                }}>
+                    <IoMenuSharp
+                        className={classes.navMenu}
+                        onClick={handleDrawerOpen}
+                        aria-label='Menu'
+                        style={{
+                            display: 'block',
+                            width: '40px',
+                            height: '40px'
+                        }}
+                    />
+                </div>
             </div>
             <Drawer
                 variant='temporary'
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleDrawerClose();
-                    } else if (reason !== 'escapeKeyDown') {
-                        handleDrawerClose();
-                    }
-                }}
+                onClose={handleDrawerClose}
+                onClick={handleBackdropClick}
                 anchor='left'
                 open={open}
-                classes={{ paper: classes.MuiDrawer }}
+                classes={{ 
+                    paper: classes.MuiDrawer,
+                    root: 'drawer-overlay'
+                }}
                 className='drawer'
                 disableScrollLock={true}
             >
