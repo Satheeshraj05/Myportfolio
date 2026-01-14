@@ -16,26 +16,25 @@ export const servicesData = [
     //     title: 'Content Writing',
     //     icon: <BiPencil /> 
     // },
-    // {
-    //     id: 3,
-    //     title: 'Email Marketing',
-    //     icon: <AiOutlineMail />
-    // },
-    // {
-    //     id: 4,
-    //     title: 'Internet Research',
-    //     icon: <FaInternetExplorer />
-    // },
-    // {
-    //     id: 5,
-    //     title: 'Tutoring',
-    //     icon: <FaChalkboardTeacher />
-    // },
-
+    {
+        id: 3,
+        title: 'AI Model Training',
+        icon: <AiFillCloud />
+    },
+    {
+        id: 4,
+        title: 'AI Research Engineer',
+        icon: <BsClipboardData />
+    },
+    {
+        id: 5,
+        title: 'Software Development',
+        icon: <BsCodeSlash />
+    },
     {
         id: 6,
         title: 'Web Design',
-        icon: <BsCodeSlash />
+        icon: <BiPencil /> 
     },
     {
         id: 7,
@@ -43,28 +42,28 @@ export const servicesData = [
         icon: <FaCameraRetro />
     },
     {
-        id: 9,
+        id: 7,
         title: 'Video Editing',
         icon: <FaVideo />
     },
     {
-        id: 11,
+        id: 8,
         title: 'Ebook Writing',
         icon: <FaTabletAlt />
     },
     {
-        id: 12,
-        title: 'Wordpress',
+        id: 9,
+        title: 'WordPress',
         icon: <AiOutlineCloudServer />
     },
     {
-        id: 12,
+        id: 10,
         title: 'GitHub',
         icon: <AiOutlineGithub />
     },
     {
-        id: 12,
-        title: 'PostMan',
+        id: 11,
+        title: 'Postman',
         icon: <AiOutlineApi />
     },
 
@@ -76,7 +75,3 @@ export const servicesData = [
     // },
 
 ]
-
-// Uncomment your required service.
-// Couldn't find the required services? Raise an issue on github at https://github.com/hhhrrrttt222111/developer-portfolio/issues/new
-// You can also add on your own 😉.

@@ -140,16 +140,14 @@ function Contacts() {
                     message: message,
                 };
 
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
-                    setSuccess(true);
-                    setErrMsg('');
+                console.log('Form submitted:', responseData);
+                setSuccess(true);
+                setErrMsg('');
 
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                    setOpen(false);
-                });
+                setName('');
+                setEmail('');
+                setMessage('');
+                setOpen(true);
             } else {
                 setErrMsg('Invalid email');
                 setOpen(true);

@@ -11,12 +11,21 @@ import eight from '../assets/svg/projects/eight.svg'
 export const projectsData = [
     {
         id: 1,
+        "projectName": "Website Builder - Drag and Drop Page Builder",
+        "projectDesc": "A modern, intuitive drag-and-drop website builder that allows you to create responsive websites without writing code. Design your website visually by dragging elements onto the canvas, customizing their properties, and exporting the generated HTML and CSS.",
+        "tags": ["Next.js", "React", "Tailwind CSS","Node.js","Vercel"],
+        "code": "https://github.com/Satheeshraj05/Website-Builder",
+        "demo": "https://website-builder-three-smoky.vercel.app/",
+        "image": one
+    },
+    {
+        id: 2,
         "projectName": "Ai-Saas",
         "projectDesc": "This project involves the development of a comprehensive SaaS platform with AI capabilities for creating and managing text, code, images, videos, and music.",
         "tags": ["Next.js", "React", "Tailwind CSS", "Prisma", "Vercel"],
         "code": "https://github.com/Satheeshraj05/ai-saas-genius",
         "demo": "https://ai-saas-genius-ehwm.vercel.app/",
-        "image": one
+        "image": two
     },
     {
         id: 3,
@@ -25,19 +34,19 @@ export const projectsData = [
         tags: ['Wordpress', 'Figma', 'Hostinger'],
         code: 'https://justframez.in/',
         demo: 'https://justframez.in/',
-        image: two
+        image: three
     },
     {
-        id: 3,
+        id: 4,
         projectName: 'Food-Product-Explorer',
         projectDesc: 'Explore food products with Food Product Explorer, a Next.js web app using the OpenFoodFacts API for easy search, filtering, and detailed viewing.',
         tags: ['Next.js', 'React', 'Tailwind CSS', 'SWR', 'Heroicons', 'TypeScript', 'OpenFoodFacts API'],
         code: 'https://github.com/Satheeshraj05/Food-Product-Explorer',
         demo: 'https://food-product-explorer-self.vercel.app/',
-        image: three
+        image: four
     },
     {
-        id: 3,
+        id: 5,
         projectName: 'Design Cartel',
         projectDesc: 'This project is a portfolio for the company to display the company products and designs',
         tags: ['Javascript', 'HTML', 'CSS', 'PHP'],

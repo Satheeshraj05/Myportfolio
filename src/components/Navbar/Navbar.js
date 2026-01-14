@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import Fade from 'react-reveal/Fade';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
@@ -16,7 +16,6 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
     const { theme, setHandleDrawer } = useContext(ThemeContext);
-
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {
@@ -131,7 +130,7 @@ function Navbar() {
     };
 
     return (
-        <div className='navbar'>
+        <div className="navbar">
             <div className='navbar--container'>
                 <h1 style={{ color: theme.secondary }}>
                     {shortname(headerData.name)}
