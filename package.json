@@ -1,6 +1,6 @@
 {
-  "home": "https://satheeshraj05.github.io/Myportfolio/",
-  "name": "developer-portfolio",
+  "homepage": "https://satheeshraj05.github.io/Myportfolio/",
+  "name": "Myportfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
