@@ -45,7 +45,7 @@ function Navbar() {
             transform: 'translateY(-10px)',
             transition: 'color 0.3s',
             position: 'relative',
-            zIndex: 1000, // Ensure it's above other elements
+            zIndex: 1000, 
             '&:hover': {
                 color: theme.primary,
             },
